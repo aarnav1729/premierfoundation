@@ -4,12 +4,6 @@ module.exports = {
   presets: [],
   darkMode: 'media', // or 'class'
   theme: {
-    extend: {
-      colors: {
-        background: '#0f6ab0',
-        button: '#61b847',
-        text: '#FFFFFF',
-      },
     screens: {
       sm: '640px',
       md: '768px',
