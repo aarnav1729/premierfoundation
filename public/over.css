@@ -16,12 +16,3 @@ body {
   h1, h2, h3, h4, h5, h6 {
     color: #FFFFFF !important;
   }  
-
-  .custom-nav-link {
-    color: #FFFFFF !important;
-    transition: color 0.3s;
-}
-
-.custom-nav-link:hover {
-    color: #303030 !important; 
-}
