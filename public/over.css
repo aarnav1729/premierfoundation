@@ -1,5 +1,6 @@
 /* custom-styles.css */
 body {
+  font-family: 'IBM Plex Sans', sans-serif !important;
     background-color: #0c5b97 !important;
     color: #FFFFFF !important;
   }
