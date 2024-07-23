@@ -1,13 +1,18 @@
 ---
-
-import Projects from '../components/Projects.astro';
-
+import Features from '../components/Features.astro';
+import HeroSection from '../components/HeroSection.astro';
 import Layout from '../layouts/Layout.astro';
-
+import Testimonials from '../components/Testimonials.astro';
+import CallToAction from '../components/CallToAction.astro';
+import Blog from '../components/Blog.astro';
 ---
 
 <Layout title="Premier Foundation">
 	<main class="space-y-40 mb-40">
-		<Projects/>
+		<HeroSection/>
+		<Features/>
+		<Testimonials/>
+		<CallToAction/>
+		<Blog/>
 	</main>
 </Layout>
