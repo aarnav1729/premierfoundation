@@ -48,9 +48,17 @@ import AppHeader from "../components/AppHeader.astro";
     }
 
     body {
-    font-family: 'IBM Plex Sans', sans-serif !important;
-    margin: 0;
-    background-image: linear-gradient(to right, #0f6ab0 0%, #61b847 100%) !important;
-    color: #ffffff !important;
-}
+        font-family: 'IBM Plex Sans', sans-serif !important;
+        margin: 0;
+        background: linear-gradient(to right, #0f6ab0 0%, #61b847 100%) !important;
+        background-size: 600% 600% !important;
+        animation: GradientBackground 30s ease infinite !important;
+        color: #ffffff !important;
+    }
+
+    @keyframes GradientBackground {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
 </style>
