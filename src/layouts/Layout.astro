@@ -52,8 +52,20 @@ import AppHeader from "../components/AppHeader.astro";
         margin: 0;
         background: linear-gradient(270deg, #0f6ab0, #95cd8c, #61b847);
         background-size: 600% 600%;
-        animation: GradientBackground 15s ease infinite;
+        animation: GradientBackground 7s ease infinite;
         color: #ffffff !important;
+    }
+
+    .grain {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        background-image: url('/public/images/clients/b.png');
+        opacity: 0.2;
+        z-index: 1;
     }
 
     @keyframes GradientBackground {
