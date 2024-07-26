@@ -21,47 +21,43 @@ const links = [
 ---
 
 <script>
-    import { onMount } from "solid-js";
-        
-    onMount(() => {
-        let isToggled = false;
-        const navlinks = document.querySelector("#navlinks");
-        const hamburger = document.querySelector("#hamburger");
-        const layer = document.querySelector("#navLayer");
-        const links = [...navlinks.querySelector("ul").children];
+    let isToggled = false;
+    const navlinks = document.querySelector("#navlinks");
+    const hamburger = document.querySelector("#hamburger");
+    const layer = document.querySelector("#navLayer");
+    const links = [...navlinks.querySelector("ul").children];
 
-        function toggleNavlinks() {
-            if (isToggled) {
-                navlinks.classList.add("!visible", "!scale-100", "!opacity-100", "!lg:translate-y-0");
-                hamburger.classList.add("toggled");
-                layer.classList.add("origin-top", "scale-y-100");
-            } else {
-                navlinks.classList.remove("!visible", "!scale-100", "!opacity-100", "!lg:translate-y-0");
-                hamburger.classList.remove("toggled");
-                layer.classList.remove("origin-top", "scale-y-100");
-            }
+    function toggleNavlinks() {
+        if (isToggled) {
+            navlinks.classList.add("!visible", "!scale-100", "!opacity-100", "!lg:translate-y-0");
+            hamburger.classList.add("toggled");
+            layer.classList.add("origin-top", "scale-y-100");
+        } else {
+            navlinks.classList.remove("!visible", "!scale-100", "!opacity-100", "!lg:translate-y-0");
+            hamburger.classList.remove("toggled");
+            layer.classList.remove("origin-top", "scale-y-100");
         }
-        hamburger.addEventListener("click", () => {
+    }
+    hamburger.addEventListener("click", () => {
+        isToggled = !isToggled;
+        toggleNavlinks();
+    });
+
+    links.forEach((link) => {
+        link.addEventListener("click", () => {
             isToggled = !isToggled;
             toggleNavlinks();
         });
+    });
 
-        links.forEach((link) => {
-            link.addEventListener("click", () => {
-                isToggled = !isToggled;
-                toggleNavlinks();
-            });
-        });
-
-        window.addEventListener("scroll", () => {
-            const header = document.querySelector("header");
-            if (window.scrollY > 50) {
-                header.classList.add("scrolled");
-            }
-            else {
-                header.classList.remove("scrolled");
-            }
-        });
+    window.addEventListener("scroll", () => {
+        const header = document.querySelector("header");
+        if (window.scrollY > 50) {
+            header.classList.add("scrolled");
+        }
+        else {
+            header.classList.remove("scrolled");
+        }
     });
 </script>
 
@@ -125,29 +121,15 @@ const links = [
         @apply -translate-y-1 -rotate-45;
     }
 
-    header {
-        background: linear-gradient(270deg, #61b847, #95cd8c, #7ac5ff, #0f6ab0);
-        background-size: 600% 600%;
-        animation: GradientBackground 7s ease infinite !important;
-        transition: background 0.3s ease;
-    }
-
     header.scrolled {
-        background: linear-gradient(90deg, #0f6ab0, #7ac5ff, #95cd8c, #61b847);
-        background-size: 600% 600%;
-        animation: GradientBackgroundReverse 7s ease infinite !important;
-        transition: background 0.3s ease;
+        background: linear-gradient(270deg, #61b847, #95cd8c, #7ac5ff, #0f6ab0);;
+        transition: background-color 0.3s ease;
+        animation: GradientBg 7s ease infinite !important;
     }
 
-    @keyframes GradientBackground {
+    @keyframes GradientBg {
         0% { background-position: 0% 50%; }
         50% { background-position: 100% 50%; }
         100% { background-position: 0% 50%; }
-    }
-
-    @keyframes GradientBackgroundReverse {
-        0% { background-position: 100% 50%; }
-        50% { background-position: 0% 50%; }
-        100% { background-position: 100% 50%; }
     }
 </style>
