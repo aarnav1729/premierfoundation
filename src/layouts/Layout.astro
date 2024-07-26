@@ -53,6 +53,9 @@ import AppHeader from "../components/AppHeader.astro";
                 <span class="text-sm font-semibold tracking-wide text-yellow-900 dark:text-white"> Upcoming</span>
             </a>
         </div>
+        <div class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+            <img src="/public/images/clients/up.png" alt="Back to Top" />
+        </div>
     </body>
 </html>
 <style>
@@ -90,9 +93,40 @@ import AppHeader from "../components/AppHeader.astro";
         opacity: 0.3 !important;
     }
 
+    .back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        background-color: #000;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 50;
+        opacity: 0.7;
+        transition: opacity 0.3s;
+    }
+
+    .back-to-top:hover {
+        opacity: 1;
+    }
+
+    .back-to-top img {
+        width: 50%;
+        height: 50%;
+    }
+
     @keyframes GradientBackground {
         0% { background-position: 0% 50%; }
         50% { background-position: 100% 50%; }
         100% { background-position: 0% 50%; }
     }
 </style>
+<script>
+    document.querySelector('.back-to-top').addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+</script>
