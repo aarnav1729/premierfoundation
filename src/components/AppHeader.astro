@@ -123,6 +123,13 @@ const links = [
 
     header.scrolled {
         background: linear-gradient(270deg, #61b847, #95cd8c, #7ac5ff, #0f6ab0);;
-        animation: GradientBackground 7s ease infinite !important;
+        transition: background-color 0.3s ease;
+        animation: GradientBg 7s ease infinite !important;
+    }
+
+    @keyframes GradientBg {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
     }
 </style>
