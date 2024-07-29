@@ -1,0 +1,61 @@
+---
+// Import the layout
+import Layout from '../layouts/Layout.astro';
+---
+
+// Use the layout
+<Layout>
+    <section class="gallery">
+        <div class="grid">
+            <img src="/images/clients/d1.jpeg" alt="Sample Image 1" />
+            <img src="/images/clients/d2.jpeg" alt="Sample Image 1" />
+            <img src="/images/clients/d3.jpeg" alt="Sample Image 1" />
+            <img src="/images/clients/d4.jpeg" alt="Sample Image 1" />
+            <img src="/images/clients/d5.jpeg" alt="Sample Image 1" />
+            <img src="/images/clients/d6.jpeg" alt="Sample Image 1" />
+            <img src="/images/clients/d7.jpeg" alt="Sample Image 1" />
+            <img src="/images/clients/d1.jpeg" alt="Sample Image 1" />
+            <img src="/images/clients/d2.jpeg" alt="Sample Image 1" />
+            <img src="/images/clients/d3.jpeg" alt="Sample Image 1" />
+            <img src="/images/clients/d4.jpeg" alt="Sample Image 1" />
+            <img src="/images/clients/d5.jpeg" alt="Sample Image 1" />
+            <img src="/images/clients/d6.jpeg" alt="Sample Image 1" />
+        </div>
+    </section>
+</Layout>
+
+<style>
+    .gallery {
+        padding: 2rem;
+    }
+
+    .grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .grid img {
+        width: 100%;
+        height: auto;
+        max-width: 300px;
+        border-radius: 8px;
+    }
+
+    @media (min-width: 600px) {
+        .grid {
+            justify-content: space-between;
+        }
+
+        .grid img {
+            flex: 1 1 calc(33.333% - 16px);
+            margin: 8px;
+        }
+    }
+
+    @media (min-width: 900px) {
+        .grid img {
+            flex: 1 1 calc(25% - 16px);
+        }
+    }
+</style>
