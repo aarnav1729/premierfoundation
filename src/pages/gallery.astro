@@ -2,24 +2,22 @@
 // Import the layout
 import Layout from '../layouts/Layout.astro';
 ---
-
-// Use the layout
 <Layout>
     <section class="gallery">
         <div class="grid">
             <img src="/images/clients/d1.jpeg" alt="Sample Image 1" />
-            <img src="/images/clients/d2.jpeg" alt="Sample Image 1" />
-            <img src="/images/clients/d3.jpeg" alt="Sample Image 1" />
-            <img src="/images/clients/d4.jpeg" alt="Sample Image 1" />
-            <img src="/images/clients/d5.jpeg" alt="Sample Image 1" />
-            <img src="/images/clients/d6.jpeg" alt="Sample Image 1" />
-            <img src="/images/clients/d7.jpeg" alt="Sample Image 1" />
-            <img src="/images/clients/d1.jpeg" alt="Sample Image 1" />
-            <img src="/images/clients/d2.jpeg" alt="Sample Image 1" />
-            <img src="/images/clients/d3.jpeg" alt="Sample Image 1" />
-            <img src="/images/clients/d4.jpeg" alt="Sample Image 1" />
-            <img src="/images/clients/d5.jpeg" alt="Sample Image 1" />
-            <img src="/images/clients/d6.jpeg" alt="Sample Image 1" />
+            <img src="/images/clients/d2.jpeg" alt="Sample Image 2" />
+            <img src="/images/clients/d3.jpeg" alt="Sample Image 3" />
+            <img src="/images/clients/d4.jpeg" alt="Sample Image 4" />
+            <img src="/images/clients/d5.jpeg" alt="Sample Image 5" />
+            <img src="/images/clients/d6.jpeg" alt="Sample Image 6" />
+            <img src="/images/clients/d7.jpeg" alt="Sample Image 7" />
+            <img src="/images/clients/d1.jpeg" alt="Sample Image 8" />
+            <img src="/images/clients/d2.jpeg" alt="Sample Image 9" />
+            <img src="/images/clients/d3.jpeg" alt="Sample Image 10" />
+            <img src="/images/clients/d4.jpeg" alt="Sample Image 11" />
+            <img src="/images/clients/d5.jpeg" alt="Sample Image 12" />
+            <img src="/images/clients/d6.jpeg" alt="Sample Image 13" />
         </div>
     </section>
 </Layout>
@@ -30,32 +28,20 @@ import Layout from '../layouts/Layout.astro';
     }
 
     .grid {
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         gap: 16px;
     }
 
     .grid img {
         width: 100%;
         height: auto;
-        max-width: 300px;
         border-radius: 8px;
+        object-fit: cover;
     }
 
-    @media (min-width: 600px) {
-        .grid {
-            justify-content: space-between;
-        }
-
-        .grid img {
-            flex: 1 1 calc(33.333% - 16px);
-            margin: 8px;
-        }
-    }
-
-    @media (min-width: 900px) {
-        .grid img {
-            flex: 1 1 calc(25% - 16px);
-        }
+    /* Additional styling for varied heights to achieve Pinterest-like look */
+    .grid img:nth-child(odd) {
+        grid-row: span 2;
     }
 </style>
