@@ -6,17 +6,17 @@ import Layout from '../layouts/Layout.astro';
     <section class="gallery">
         <div class="grid">
             <img src="/images/clients/d1.jpeg" alt="Sample Image 1" />
-            <img src="/images/clients/d7.jpeg" alt="Sample Image 2" />
+            <img src="/images/clients/d2.jpeg" alt="Sample Image 2" />
             <img src="/images/clients/d3.jpeg" alt="Sample Image 3" />
-            <img src="/images/clients/d7.jpeg" alt="Sample Image 4" />
+            <img src="/images/clients/d4.jpeg" alt="Sample Image 4" />
             <img src="/images/clients/d5.jpeg" alt="Sample Image 5" />
-            <img src="/images/clients/d7.jpeg" alt="Sample Image 6" />
-            <img src="/images/clients/d2.jpeg" alt="Sample Image 7" />
-            <img src="/images/clients/d7.jpeg" alt="Sample Image 8" />
-            <img src="/images/clients/d6.jpeg" alt="Sample Image 9" />
-            <img src="/images/clients/d7.jpeg" alt="Sample Image 10" />
+            <img src="/images/clients/d6.jpeg" alt="Sample Image 6" />
+            <img src="/images/clients/d7.jpeg" alt="Sample Image 7" />
+            <img src="/images/clients/d1.jpeg" alt="Sample Image 8" />
+            <img src="/images/clients/d2.jpeg" alt="Sample Image 9" />
+            <img src="/images/clients/d3.jpeg" alt="Sample Image 10" />
             <img src="/images/clients/d4.jpeg" alt="Sample Image 11" />
-            <img src="/images/clients/d7.jpeg" alt="Sample Image 12" />
+            <img src="/images/clients/d5.jpeg" alt="Sample Image 12" />
             <img src="/images/clients/d6.jpeg" alt="Sample Image 13" />
         </div>
     </section>
@@ -28,20 +28,26 @@ import Layout from '../layouts/Layout.astro';
     }
 
     .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 16px;
+        column-count: 3;
+        column-gap: 16px;
     }
 
     .grid img {
         width: 100%;
-        height: auto;
+        display: block;
+        margin-bottom: 16px;
         border-radius: 8px;
-        object-fit: cover;
     }
 
-    /* Additional styling for varied heights to achieve Pinterest-like look */
-    .grid img:nth-child(odd) {
-        grid-row: span 2;
+    @media (max-width: 800px) {
+        .grid {
+            column-count: 2;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .grid {
+            column-count: 1;
+        }
     }
 </style>
