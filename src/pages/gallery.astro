@@ -29,25 +29,30 @@ import Layout from '../layouts/Layout.astro';
 
     .grid {
         column-count: 3;
-        column-gap: 16px;
+        column-gap: 1em;
     }
 
-    .grid img {
-        width: 100%;
-        display: block;
-        margin-bottom: 16px;
-        border-radius: 8px;
-    }
-
-    @media (max-width: 800px) {
-        .grid {
-            column-count: 2;
-        }
+    .grid-item {
+    display: inline-block;
+    margin: 0 0 1em;
+    width: 100%;
     }
 
     @media (max-width: 500px) {
         .grid {
             column-count: 1;
+        }
+    }
+
+    @media (min-width: 501px) and (max-width: 800px) {
+        .grid {
+            column-count: 2;
+        }
+    }
+
+    @media (min-width: 801px) {
+        .grid {
+            column-count: 3;
         }
     }
 </style>
